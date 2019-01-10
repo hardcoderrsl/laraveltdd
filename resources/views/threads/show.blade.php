@@ -5,14 +5,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Threads</div>
+                <div class="card-header"><a href="{{$thread->path()}}">{{$thread->title}}</a></div>
 
                 <div class="card-body">
                    
                     <article>
-                     <a href="{{$thread->path()}}">
-                     <h4>{{$thread->title}}</h4>
-                     </a>
+                     
+                     
+                     
                      <div class="body">{{$thread->body}}</div>
                      
                     </article>

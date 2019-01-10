@@ -22,6 +22,24 @@
             </div>
         </div>
     </div>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Replies</div>
+
+                <div class="card-body">
+                   @foreach($thread->replies as $reply)
+                    <article>
+                     
+                     <div class="body">{{$reply->body}}</div>
+                     
+                    </article>
+                    <hr>
+                   @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection
 

@@ -16,6 +16,7 @@ use Symfony\Component\HttpKernel\Fragment\RoutableFragmentRenderer;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::post("/threads", 'ThreadsController@store');
 Route::get("/threads","ThreadsController@index");
 Route::get("/threads/{thread}","ThreadsController@show");
 Auth::routes();

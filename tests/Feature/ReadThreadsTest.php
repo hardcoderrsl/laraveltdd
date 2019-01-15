@@ -38,7 +38,7 @@ class ThreadsTest extends TestCase
     public function can_browse_single_thread()
     {
         
-        $response = $this->get('/threads/'.$this->thread->id);
+        $response = $this->get($this->thread->path());
 
         $response->assertStatus(200);
     }
@@ -47,7 +47,7 @@ class ThreadsTest extends TestCase
     public function single_thread_page_shows_title()
     {
        
-        $response = $this->get('/threads/'.$this->thread->id);
+        $response = $this->get($this->thread->path());
 
         $response->assertSee($this->thread->title);
     }
@@ -56,7 +56,7 @@ class ThreadsTest extends TestCase
     public function single_thread_page_shows_body()
     {
        
-        $response = $this->get('/threads/'.$this->thread->id);
+        $response = $this->get($this->thread->path());
 
         $response->assertSee($this->thread->body);
     }
@@ -71,7 +71,7 @@ class ThreadsTest extends TestCase
        $reply= factory("App\Reply")
         ->create(["thread_id"=>$this->thread->id]);
     // when we visit a thread
-        $response = $this->get('/threads/'.$this->thread->id);
+        $response = $this->get($this->thread->path());
 
     // then we should see the replies
         $response->assertSee($reply->body);
